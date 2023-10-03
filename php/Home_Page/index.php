@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <style>
         .banner-image{
-            background-image: url('../assets/asset_web/bg.png');
+            background-image: url('../../assets/asset_web/bg.png');
             background-size: cover;
         }
 
@@ -138,7 +138,7 @@
             <button type="button" class="btn btn-outline-primary">Learn More</button>
             </div>
             <div class="content text-right p-md-5">
-                <img src="../assets/asset_web/hero.png" alt="" class="img-fluid">
+                <img src="../../assets/asset_web/hero.png" alt="" class="img-fluid">
             </div>
         </div>
        
