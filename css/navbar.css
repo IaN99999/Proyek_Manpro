@@ -1,0 +1,10 @@
+.bg-body-tertiary {
+    background-color: transparent !important;
+}
+.navbar-toggler:focus {
+    transform: scale(0.9); 
+    transition: transform 10s ease;
+ }
+a:hover {
+    text-decoration: underline;
+}
