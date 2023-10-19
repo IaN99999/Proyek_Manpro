@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -7,6 +8,9 @@
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 		<style>
+			body{
+				background: url('../../assets/asset_web/bg.png');
+			}
 			.card-img-top {
 				position: relative;
 				display: block;
@@ -27,6 +31,7 @@
 				padding: 1.5em .5em .5em;
 				text-align: center;
 				box-shadow: 0 5px 10px rgba(0, 0, -2);
+				background: #eeeeee
 			}
 
             .card:hover img{
@@ -35,6 +40,22 @@
             }
 			h1 {
 				text-align: center;
+				color:white;
+			}
+			h2{
+				text-align: center;
+				margin-bottom: 30px;
+				color: white;
+			}
+			hr{
+				width: 10%;
+				height: 5px;
+				border: 0 none;
+				margin-right: auto;
+				margin-left: auto;
+				margin-top: 30px;
+				margin-bottom: 30px;
+				background-color:white;
 			}
 
 
@@ -42,9 +63,11 @@
 	</head>
 	<body>
 		<div class="container-fluid">
-			<h1>Testimonial</h1>
+			<h1>Testimonials</h1>
+			<hr>
+			<h2>What Our Clients Say</h2>
 			<div class="row">
-				<div class="col-md-4 d-flex justify-content-center">
+				<div class="col-md-4 d-flex justify-content-end">
 					<div class="card" style="width: 18rem;">
 						<img src="../../assets/foto_pengajar/guru1.jpg" class="card-img-top" alt="...">
 						<div class="card-body">
@@ -62,7 +85,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4 d-flex justify-content-center">
+				<div class="col-md-4 d-flex justify-content-start">
 					<div class="card" style="width: 18rem;">
 						<img src="../../assets/foto_pengajar/guru1.jpg" class="card-img-top" alt="...">
 						<div class="card-body">
