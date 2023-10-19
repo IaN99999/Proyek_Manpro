@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <nav class="navbar fixed-top navbar-expand-md navbar-dark p-md-3">
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark p-md-3" style="background-color: blue;">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
