@@ -1,10 +1,10 @@
 <footer class="footer" style="background-color: aliceblue;">
     <!-- Konten footer Anda di sini -->
-    <div class="container" style="padding: 5vh;">
+    <div class="container" style="padding-bottom:5%; padding-right:1%; padding-top:2%;">
         <div class="row" style="text-align-last: center;">
             <div class="col">
                 <div class="row">
-                    <span style="font-size: 4vh;font-weight: bold;">Dana English Course</span>
+                    <span style="font-size: 4vh;font-weight: bold;white-space:nowrap">Dana English Course</span>
                 </div>
                 <div class="row">
                     <span>Tempat Les Bahasa Inggris Terbaik untuk kelas TK sampai SMA & Umum. Kelas Persiapan TOEFL </span>
@@ -32,17 +32,26 @@
             </div>
             <div class="col">
                 <div class="row">
-                    <span style="font-size: 4vh;font-weight: bold;">Company Info</span>
+                    <span style="font-size: 4vh;font-weight: bold;white-space:nowrap">Company Info</span>
                 </div>
                 <div class="row">
                     <a href="#" class="link-dark">About Us</a>
-                    <a href="#" class="link-dark">Dark link</a>
-                    <a href="#" class="link-dark">Dark link</a>
+                    <a href="#" class="link-dark">Blog</a>
+                    <!-- <a href="#" class="link-dark">Dark link</a> -->
                 </div>
             </div>
             <div class="col">
                 <div class="row">
-                    <span style="font-size: 4vh;font-weight: bold;">class List</span>
+                    <span style="font-size: 4vh;font-weight: bold; white-space:nowrap">class List</span>
+                </div>
+                <div class="row">
+                    <span>Beginner</span>
+                </div>
+                <div class="row">
+                    <span>Intermediate</span>
+                </div>
+                <div class="row">
+                    <span>Advance</span>
                 </div>
             </div>
         </div>

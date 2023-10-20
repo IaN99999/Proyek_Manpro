@@ -1,53 +1,4 @@
 <?php include '../navbar_footer/navbar.php'; ?>
-    <!-- Navbar 
-        <nav class="navbar fixed-top navbar-expand-md navbar-dark p-md-3">
-            <div class="container">
-                <a href="#" class="navbar-brand">BrandName</a>
-        
-            
-                <button type="button" class="navbar-toggler"
-                data-bs-target="#navbarNav"
-                data-bs-toggle="collapse"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-lable="Toggle Navbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-white">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-white">Product</a>
-                        </li>
-                        <li class="nav-item">
-        
-                        <a href="#" class="nav-link text-white">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-white">Contact</a>
-                        </li>
-                        
-                    </ul>
-                    <div class="mx-auto"></div>
-                    <ul class="navbar-nav">
-                
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-white">Login</a>
-                        </li>
-                        <li class="nav-item">
-                        <button type="button" class="btn btn-primary mx-md-2">Join Us</button>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </nav>
-        -->
-
-
 
     <!-- Banner Image -->
     <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center p-md-4">
@@ -68,7 +19,7 @@
 
     <!-- Main Content Area -->
 
-    <div class="container text-left ">
+    <!-- <div class="container text-left ">
         <div class="row align-items-start p-md-5">
             <div class="col my-md-4">
                 <h5>Get In Touch</h5>
@@ -95,9 +46,9 @@
             </div>
 
         </div>
-    </div>
+    </div> -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <script>
         var nav = document.querySelector('nav');
@@ -109,6 +60,6 @@
                 nav.classList.remove('bg-dark', 'shadow');
             }
         });
-    </script>
+    </script> -->
 
 <?php include '../navbar_footer/footer.php'; ?>
