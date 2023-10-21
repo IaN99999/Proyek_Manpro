@@ -28,10 +28,13 @@
                 <!-- Content for the first column goes here --> 
             </div> 
  
-            <!-- Column 2 --> 
-            <div class="col-md-6"> 
-                <!-- Content for the second column goes here --> 
-            </div> 
+            <!-- Column 2 -->
+            <div class="col-md-6">
+                <h2>Halaman Utama</h2>
+                <p>Selamat datang di halaman utama.</p>
+                <a href="logout.php">Logout</a>
+            </div>
+ 
         </div> 
     </div> 
  
