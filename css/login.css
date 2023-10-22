@@ -1,0 +1,15 @@
+body, html { 
+    height: 100%; 
+    margin: 0; 
+} 
+.column1 { 
+    background-image: url('../assets/asset_web/bg.png'); /* Replace with the actual path to your image */ 
+    background-size: cover; 
+    background-position: center; 
+    color: white; /* Set text color for better readability */ 
+    height: 100%; 
+    align-self: center;
+} 
+.column2{
+    align-self: center;
+}
