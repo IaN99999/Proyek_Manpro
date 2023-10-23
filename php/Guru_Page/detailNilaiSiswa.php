@@ -122,13 +122,13 @@
 
     <div class="student-info">
         <p>Nama: <?= $result2['Nama_Siswa']; ?></p>
-        <p>Class: <?php if($result2['Id_Class'] == 1){
-                        echo "Beginner";
-                    }else if($result2['Id_Class'] == 2){
-                        echo "Intermediate";
-                    }else if($result2['Id_Class'] == 3){
-                        echo "Expert";
-                    } ?></p>
+        <p>Class: <?php  
+                        $id = $result2['Id_Siswa'];
+                        $sql2 = "SELECT * FROM class WHERE Id_Siswa = $id";
+                        $res = mysqli_query($conn,$sql2);
+                        $res2 = mysqli_fetch_assoc($res);
+                        echo $res2['Nama_Class'];
+                    ?></p>
         <p>No Pendaftaran: <?= $id; ?></p>
     </div>
 

@@ -103,6 +103,18 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Table structure for table `nilai`
+--
+
+CREATE TABLE `nilai` (
+  `Id_Nilai` int(11) NOT NULL,
+  `Id_Siswa` int(11) NOT NULL,
+  `Nilai` varchar(11) NOT NULL,
+  `Tipe` varchar(100) NOT NULL,
+  `Keterangan` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
 -- Indexes for dumped tables
 --
 
