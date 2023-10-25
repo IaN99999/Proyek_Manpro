@@ -3,7 +3,7 @@
 include '../connection.php';
 session_start();
 
-if (isset($_SESSION['Nama_User'])) {
+if (isset($_SESSION['username'])) {
     header("Location: ../User_Page/home.php");
     exit();
 }

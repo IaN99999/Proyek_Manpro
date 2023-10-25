@@ -1,25 +1,56 @@
 <?php include '../navbar_footer/navbar.php'; ?>
 
-    <!-- Banner Image -->
-    <div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center p-md-4">
-        <div class="content text-left p-md-5 ">
+<!-- Banner Image -->
+<div class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center p-md-4">
+    <div class="content text-left p-md-5 ">
 
-            <h5 class="welcome text-white mx-md-2 my-md-3">WELCOME</h5>
-            <h1 class="text-white mx-md-2 my-md-3">Best English Learning</h1>
-            <p class="text-white mx-md-2 my-md-3">We know how large objects will act, <br>
-                but things on a small scale</p>
-            <button type="button" class="btn btn-primary mx-md-2 my-md-3">Get Quote Now</button>
-            <button type="button" class="btn btn-outline-primary">Learn More</button>
-        </div>
-        <div class="content text-right p-md-5">
-            <img src="../../assets/asset_web/hero.png" alt="" class="img-fluid">
-        </div>
+        <h5 class="welcome text-white mx-md-2 my-md-3">WELCOME</h5>
+        <h1 class="text-white mx-md-2 my-md-3">Best English Learning</h1>
+        <p class="text-white mx-md-2 my-md-3">We know how large objects will act, <br>
+            but things on a small scale</p>
+        <button type="button" class="btn btn-primary mx-md-2 my-md-3">Get Quote Now</button>
+        <button type="button" class="btn btn-outline-primary">Learn More</button>
     </div>
+    <div class="content text-right p-md-5">
+        <img src="../../assets/asset_web/hero.png" alt="" class="img-fluid">
+    </div>
+</div>
+
+<div class="container">
+    <h1>Daftar Harga Kursus Bahasa Inggris</h1>
+    <div class="row">
+        <?php
+        include '../connection.php';
 
 
-    <!-- Main Content Area -->
+        $sql = "SELECT *
+        FROM harga
+        JOIN class ON harga.Id_Class = class.Id_Class;";
+        $result = mysqli_query($conn, $sql);
 
-    <!-- <div class="container text-left ">
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $row['Nama_Class']; ?></h5>
+                            <p class="card-text">Sesi per Bulan : <?php echo $row['session']; ?></p>
+                            <p class="card-text">Harga : <?php echo $row['Price']; ?></p>
+                        </div>
+                    </div>
+                </div>
+        <?php
+            }
+        } else {
+            echo "Belum ada data harga kursus yang tersedia.";
+        }
+        ?>
+    </div>
+</div>
+<!-- Main Content Area -->
+
+<!-- <div class="container text-left ">
         <div class="row align-items-start p-md-5">
             <div class="col my-md-4">
                 <h5>Get In Touch</h5>
@@ -48,7 +79,7 @@
         </div>
     </div> -->
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <script>
         var nav = document.querySelector('nav');

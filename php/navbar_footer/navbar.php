@@ -47,7 +47,7 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link text-white">Login</a>
+                        <a href="../Login_Logout/login.php" class="nav-link text-white">Login</a>
                     </li>
                     <li class="nav-item">
                         <button type="button" class="btn btn-primary mx-md-2">Join Us</button>

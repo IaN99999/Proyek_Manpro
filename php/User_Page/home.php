@@ -1,3 +1,10 @@
+<?php
+// echo "iwjdiwajdia";
+include '../connection.php';
+session_start();
+// echo $_SESSION['username'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -117,7 +124,7 @@
 
   <div class="vernav">
     <ul>
-      <li><a class="logo" href="#">BrandName</a></li>
+      <li><a class="logo" href="#">Dana English Course</a></li>
       <li><a class="active" href="dashboard.php"><img src="../../assets/asset_web/dash.png"> Dashboard</a></li>
       <li><a href="#news"><img src="../../assets/asset_web/class.png"> Class</a></li>
       <li><a href="#contact"><img src="../../assets/asset_web/Paper.png"> Report</a></li>
@@ -131,7 +138,7 @@
 
   <div style="margin-left:20%;padding:0px 16px;">
     <div class="user">
-      <h4 class="welcome">WELCOME USER</h4>
+      <h4 class="welcome">WELCOME <span id="namauser"></span></h4>
     </div>
 
 
@@ -139,14 +146,14 @@
       <div class="title">
         <h3>Beginner</h3>
       </div>
-      <a class="btn btn-primary" href="#" role="button">Join Class</a>
+      <a class="btn btn-primary" href="DaftarClass.php?jenis=Beginner" role="button">Join Class</a>
     </div>
 
     <div class="container two">
       <div class="title">
         <h3>Intermediate</h3>
       </div>
-      <a class="btn btn-primary" href="#" role="button">Join Class</a>
+      <a class="btn btn-primary" href="DaftarClass.php?jenis=Intermediate" role="button">Join Class</a>
     </div>
 
 
@@ -154,7 +161,7 @@
       <div class="title">
         <h3>Expert</h3>
       </div>
-      <a class="btn btn-primary" href="#" role="button">Join Class</a>
+      <a class="btn btn-primary" href="DaftarClass.php?jenis=Expert" role="button">Join Class</a>
     </div>
 
 
@@ -162,6 +169,10 @@
 
 
   </div>
+  <script>
+    let namauser = document.getElementById("namauser");
+    namauser.textContent = "<?php echo $_SESSION['username']; ?>"
+  </script>
 
 </body>
 
