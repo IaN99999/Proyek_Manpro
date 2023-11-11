@@ -30,7 +30,7 @@ session_start();
                 <a href="#"><i class="fa fa-book"></i><span> Report</span></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-archive"></i><span> Dashboard</span></a>
+                <a href="#"><i class="fa fa-archive"></i><span> Buy Package</span></a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-calendar"></i><span> Schedule</span></a>
@@ -67,7 +67,7 @@ session_start();
                 
             </div>
             <div class="button">
-                <button class="button-1">Join Class</button>
+                <a href="paymentBeginner.php" style="text-decoration: none;"><button class="button-1" >Join Class</button></a>
             </div>
         </div>
 
@@ -82,7 +82,7 @@ session_start();
                 
             </div>
             <div class="button">
-                <button class="button-1">Join Class</button>
+            <a href="paymentInter.php" style="text-decoration: none;"><button class="button-1" >Join Class</button></a>
             </div>
         </div>
 
@@ -97,7 +97,7 @@ session_start();
                 
             </div>
             <div class="button">
-                <button class="button-1">Join Class</button>
+            <a href="paymentEx.php" style="text-decoration: none;"><button class="button-1" >Join Class</button></a>
             </div>
         </div>
        
