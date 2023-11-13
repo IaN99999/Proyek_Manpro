@@ -24,7 +24,7 @@ session_start();
                 <a href="home2.php"><i class="fa fa-tachometer-alt"></i><span> Dashboard</span></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-graduation-cap"></i><span> Class</span></a>
+                <a href="joinedClass.php"><i class="fa fa-graduation-cap"></i><span> Class</span></a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-book"></i><span> Report</span></a>
