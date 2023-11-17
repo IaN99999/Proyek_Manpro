@@ -137,12 +137,12 @@
         
 
     <div class="container">
-        <?php 
-            while($row = mysqli_fetch_assoc($result)){ 
-        ?>
-        <div class="user">
+    <div class="user">
              <h4 class="welcome">WELCOME USER</h4>
         </div>
+        <?php 
+            while($row = mysqli_fetch_assoc($result)){ 
+        ?>     
         <div class="row">
             <div class="col-md-6">
                 <div class="student-info">

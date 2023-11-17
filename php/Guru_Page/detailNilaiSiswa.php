@@ -112,12 +112,13 @@
             /* float: right; */
             color: white;
             margin: 20px 10px 20px;
+            border-radius:10px;
         }
-        .table{
- 
+        table{
+            width:100%;
         }
         td{
-            width:33%;
+            width:25%;
             text-align: center;
             vertical-align:middle;
         }
@@ -125,8 +126,11 @@
             background: #AEAEAE;
             padding:10px;
             border-radius:10px;
-            /* margin: 20px 10px 20px; */
+            margin: 20px 10px 20px;
 
+        }
+        label{
+            float:left;
         }
     </style>
 </head>
@@ -186,55 +190,158 @@
         </div>
         
         <div class="button-container d-flex justify-content-end">
-            <button type="button" class="btn" style="background:#5ab0ff;">Save</button>
-            <button type="button" class="btn" style="background:#002d66;">Edit</button>
+            <div class="btnback">
+                <a href="daftarSiswa.php"><button type="button">< Back</button></a>
+            </div>
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addmodal">Add</button>
         </div>
+
+        
+
+        <?php
+            $sql3 = "SELECT * FROM nilai WHERE Id_Siswa = $id";
+            $res = mysqli_query($conn,$sql3);
+            $res2 = mysqli_fetch_assoc($res);
+            $count = mysqli_num_rows($res);
+            // echo $count;
+            if(isset($_POST['addsubmit'])){
+                // $count2 = $count+1;
+                $type = $_POST['type'];
+                $score = $_POST['score'];
+                $notes = $_POST['notes'];
+
+                $sql = "INSERT INTO `nilai`(`Id_Siswa`, `Nilai`, `Tipe`, `Keterangan`) VALUES ('$id','$score','$type','$notes')";
+                $res = mysqli_query($conn,$sql);
+                echo "<meta http-equiv='refresh' content='0'>";
+            }
+            if(isset($_POST['editsubmit'])){
+                $sql3 = "SELECT * FROM nilai WHERE Id_Siswa = $id";
+                $res = mysqli_query($conn,$sql3);
+                $res2 = mysqli_fetch_assoc($res);
+                $type = $_POST['type'];
+                $score = $_POST['score'];
+                $notes = $_POST['notes'];
+                $id_nilai = $res2['Id_Nilai'];
+
+                $sql = "UPDATE `nilai` SET `Nilai`='$score',`Tipe`='$type',`Keterangan`='$notes' WHERE `Id_Nilai` = '$id_nilai'";
+                $res = mysqli_query($conn,$sql);
+                echo "<meta http-equiv='refresh' content='0'>";
+            }
+            if(isset($_POST['delete'])){
+                $id = $_POST['id_nilai'];
+                $sql4 = "DELETE FROM `nilai` WHERE `Id_Nilai` = '$id'";
+                $res = mysqli_query($conn,$sql4);
+                echo "<meta http-equiv='refresh' content='0'>";
+            }
+
+        ?>
 
         <table class="table table-bordered">
             <thead class="table-primary">
                 <tr>
-                    <th>Tugas</th>
-                    <th>Nilai</th>
-                    <th>Keterangan</th>
+                    <th>Assignment</th>
+                    <th>Score</th>
+                    <th>Notes</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
+                <?php
+                    $sql4 = "SELECT * FROM nilai WHERE Id_Siswa = $id";
+                    $res2 = mysqli_query($conn,$sql4);
+                    $count = mysqli_num_rows($res2);
+                    if($count > 0){
+                        while($row = mysqli_fetch_assoc($res2)){ ?>
                 <tr>
-                    <td rowspan="3">Tugas</td>
-                    <td>tes</td>
-                    <td>tes</td>
+                    <td><?php echo $row['Tipe']; ?></td>
+                    <td><?php echo $row['Nilai']; ?> </td>
+                    <td><?php echo $row['Keterangan']; ?></td>
+                    <td>
+                        <form action="" method="POST">
+                            <input type="hidden" name="id_nilai" value="<?php echo $row['Id_Nilai']; ?>">
+                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#editmodal<?php echo $row['Id_Nilai'];?>">Edit</button>
+                            <button class="btn btn-danger" type="submit" name="delete">Delete</button>
+                        </form>   
+                        <!-- Modal Edit  -->
+                        <div class="modal fade" id="editmodal<?php echo $row['Id_Nilai'];?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel2">EDIT DATA</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="" method="POST">
+                                            <input type="hidden" name="id_nilai" value="<?php echo $row['Id_Nilai']; ?>">
+                                            <div class="form-group">
+                                                <label>Assignment Type</label>
+                                                <input type="text" name="type" class="form-control" value="<?php echo $row['Tipe']; ?>">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Score</label>
+                                                <input type="text" name="score" class="form-control" value="<?php echo $row['Nilai'];?>">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Notes</label>
+                                                <textarea class="form-control" name="notes" rows="5"><?php echo $row['Keterangan']; ?></textarea>
+                                            </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-primary" name="editsubmit">Edit</button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>       
+                    </td> 
                 </tr>
-                <tr>
-                    <td>tes</td>
-                    <td>tes</td>
-                </tr>
-                <tr>
-                    <td>tes</td>
-                    <td>tes</td>
-                </tr>
-                <tr>
-                    <td rowspan="3">TES</td>
-                    <td>tes</td>
-                    <td>tes</td>
-                </tr>
-                <tr>
-                    <td>tes</td>
-                    <td>tes</td>
-                </tr>
-                <tr>
-                    <td>tes</td>
-                    <td>tes</td>
-                </tr>
+                <?php } }?>        
             </tbody>
         </table>
-
-        <div class="btnback">
-            <a href="daftarSiswa.php"><button type="button">< Kembali</button></a>
-        </div>
     </div>
 
     
+<!-- modal add -->
+<div class="modal fade" id="addmodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">ADD DATA</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" method="POST">
+                    <div class="form-group">
+                        <label>Assignment Type</label>
+                        <input type="text" name="type" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Score</label>
+                        <input type="text" name="score" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Notes</label>
+                        <textarea class="form-control" name="notes" rows="5"></textarea>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-primary" name="addsubmit">Add</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
 
-    
+
+        <!-- <script>
+            $(document).ready(function (){
+                $(#editbutton).on('click',function(){
+                    $(#editmodal).modal('show');
+                });
+            });
+        </script> -->
 </body>
 </html>
+
