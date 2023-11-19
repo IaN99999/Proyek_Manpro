@@ -117,7 +117,8 @@
         table{
             width:100%;
         }
-        td{
+
+        td, th{
             width:25%;
             text-align: center;
             vertical-align:middle;
@@ -131,6 +132,10 @@
         }
         label{
             float:left;
+        }
+        img{
+            width:476px;
+            height:196px;
         }
     </style>
 </head>
@@ -299,6 +304,9 @@
                 <?php } }?>        
             </tbody>
         </table>
+        <div class="tabel-nilai">
+            <img src="../../assets/asset_web/tabel-nilai.jpg" class="img-fluid" alt="...">
+        </div>
     </div>
 
     

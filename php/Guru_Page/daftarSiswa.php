@@ -148,8 +148,8 @@
                 <div class="student-info">
                     <p>Name: <?php echo $row['Nama_Siswa'];?></p>
                     <p>Class: <?php  
-                        $id = $row['Id_Siswa'];
-                        $sql2 = "SELECT * FROM class WHERE Id_Siswa = $id";
+                        $id = $row['Id_Class'];
+                        $sql2 = "SELECT * FROM class WHERE Id_Class = $id";
                         $res = mysqli_query($conn,$sql2);
                         $result2 = mysqli_fetch_assoc($res);
                         echo $result2['Nama_Class'];
