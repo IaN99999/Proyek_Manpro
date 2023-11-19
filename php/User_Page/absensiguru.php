@@ -1,3 +1,26 @@
+<?php
+include '../connection.php';
+
+// Mengambil data dari tabel
+$sql = "SELECT *
+FROM guru
+JOIN class ON guru.id_class = class.Id_Class
+JOIN jadwal ON class.Id_Class = jadwal.Id_Class;
+";
+$result = $conn->query($sql);
+
+// Memeriksa hasil query
+if ($result->num_rows > 0) {
+  // Mengonversi hasil ke array asosiatif
+  $data = $result->fetch_all(MYSQLI_ASSOC);
+} else {
+  $data = array();
+}
+
+$conn->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -124,27 +147,26 @@ li a:hover:not(.active) {
     <div class="container">
       <div class="row">
         <div class="container" style="background-color:grey;height:max-content">
-          <div class="card" style="margin: 2%">
+        <?php foreach ($data as $loopIndex =>$row): ?>
+            <div class="card" style="margin: 2%">
             <div class="title">
-              <h3 style="color: black; padding-top:4%"><b>PERTEMUAN 1</b></h3>
+              <h3 style="color: black; padding-top:4%"><b>PERTEMUAN <?= $loopIndex + 1 ?></b></h3>
 
-              <p style="color:black">DATE/TIME : Thursday, 17th October 2023/10.30-13.30</p>
-              <p style="color:black">LECTURER : Andre Cristian</p>
-              <p style="color:black">LESSON : Intoduction</p>
+              <p style="color:black">DATE/TIME :  <?= $row['Tanggal_Jadwal'] ?>/10.30-13.30</p>
+              <p style="color:black">LECTURER : <?= $row['Nama_Guru'] ?></p>
+              <p style="color:black">LESSON : Introduction</p>
 
-              <a class="btn btn-success" style="margin-right:32px; margin-bottom:7px" href="#" role="button">Check</a>
+              <a class="btn btn-success" style="margin-right:32px; margin-bottom:7px" href="absensicheckguru.php" role="button">Check</a>
             </div>
           </div>
+        <?php endforeach; ?>
+        
         </div>
-
       </div>
-
     </div>
-
-
-
-
   </div>
+
+
 
 </body>
 
