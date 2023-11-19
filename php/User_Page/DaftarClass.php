@@ -1,5 +1,23 @@
 <?php
+include "../connection.php";
 $jenis = isset($_GET['jenis']) ? $_GET['jenis'] : 'Tidak Ada Jenis';
+
+if (isset($_POST['submit'])) {
+    $NamaPendaftar = $_POST['NamaPendaftar'];
+    $TempatLahir = $_POST['TempatLahir'];
+    $TanggalLahir = $_POST['TanggalLahir'];
+    $Pekerjaan = $_POST['Pekerjaan'];
+    $NomorHP = $_POST['NomorHP'];
+    $Alamat = $_POST['alamat'];
+    $EmailPendaftar = $_POST['EmailPendaftar'];
+    $Umur = $_POST['Umur'];
+    $JenisKelamin = $_POST['JenisKelamin'];
+
+    $sql = "INSERT INTO detail_user (nama,tanggal_lahir,pekerjaan,no_hp,alamat,email,umur,jenis_kelamin,tempat_lahir) VALUES ('$NamaPendaftar','$TanggalLahir','$Pekerjaan','$NomorHP','$Alamat','$EmailPendaftar','$Umur','$JenisKelamin','$TempatLahir')";
+    $result = mysqli_query($conn, $sql);
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -14,15 +32,17 @@ $jenis = isset($_GET['jenis']) ? $_GET['jenis'] : 'Tidak Ada Jenis';
 </head>
 
 <body style="background-color: darkgrey;">
+
     <div class="container" style="background-color: aliceblue;margin-top: 3%;padding-bottom: 3%;border-radius: 10px;">
-        <h1>Pendaftaran Class <?php echo $jenis; ?></h1>
+        <form method="post">
+            <h1>Pendaftaran Class <?php echo $jenis; ?></h1>
 
         <div class="row" style="place-items: center;padding-top: 1%;">
             <div class="col-3" style="text-align-last: right;">
                 <span>Nama :</span>
             </div>
             <div class="col-9">
-                <input type="text" class="form-control" id="NamaPendaftar">
+                <input type="text" class="form-control" id="NamaPendaftar" name="NamaPendaftar">
             </div>
         </div>
         <div class="row" style="place-items: center;padding-top: 1%;">
@@ -30,13 +50,13 @@ $jenis = isset($_GET['jenis']) ? $_GET['jenis'] : 'Tidak Ada Jenis';
                 <span>Tempat/Tanggal Lahir :</span>
             </div>
             <div class="col-4">
-                <input type="text" class="form-control" id="TempatLahir">
+                <input type="text" class="form-control" id="TempatLahir" name="TempatLahir">
             </div>
             <div class="col-1" style="text-align-last: center;">
                 <span>/</span>
             </div>
             <div class="col-4">
-                <input type="date" class="form-control" id="TanggalLahir">
+                <input type="date" class="form-control" id="TanggalLahir" name="TanggalLahir">
             </div>
         </div>
         <div class="row" style="place-items: center;padding-top: 1%;">
@@ -46,7 +66,7 @@ $jenis = isset($_GET['jenis']) ? $_GET['jenis'] : 'Tidak Ada Jenis';
                 </span>
             </div>
             <div class="col-9">
-                <input type="text" class="form-control" id="Pekerjaan">
+                <input type="text" class="form-control" id="Pekerjaan" name="Pekerjaan">
             </div>
         </div>
         <div class="row" style="place-items: center;padding-top: 1%;">
@@ -54,7 +74,7 @@ $jenis = isset($_GET['jenis']) ? $_GET['jenis'] : 'Tidak Ada Jenis';
                 <span>Nomor HP :</span>
             </div>
             <div class="col-9">
-                <input type="text" class="form-control" id="NomorHP">
+                <input type="text" class="form-control" id="NomorHP" name="NomorHP">
             </div>
         </div>
         <div class="row" style="place-items: center;padding-top: 1%;">
@@ -62,7 +82,7 @@ $jenis = isset($_GET['jenis']) ? $_GET['jenis'] : 'Tidak Ada Jenis';
                 <span>Alamat :</span>
             </div>
             <div class="col-9">
-                <input type="text" class="form-control" id="alamat">
+                <input type="text" class="form-control" id="alamat" name="alamat">
             </div>
         </div>
         <div class="row" style="place-items: center;padding-top: 1%;">
@@ -70,7 +90,7 @@ $jenis = isset($_GET['jenis']) ? $_GET['jenis'] : 'Tidak Ada Jenis';
                 <span>Email :</span>
             </div>
             <div class="col-9">
-                <input type="text" class="form-control" id="EmailPendaftar">
+                <input type="text" class="form-control" id="EmailPendaftar" name="EmailPendaftar">
             </div>
         </div>
         <div class="row" style="place-items: center;padding-top: 1%;">
@@ -78,7 +98,7 @@ $jenis = isset($_GET['jenis']) ? $_GET['jenis'] : 'Tidak Ada Jenis';
                 <span>Umur :</span>
             </div>
             <div class="col-9">
-                <input type="number" class="form-control" id="Umur">
+                <input type="number" class="form-control" id="Umur" name="Umur">
             </div>
         </div>
         <div class="row" style="place-items: center;padding-top: 1%;">
@@ -119,8 +139,14 @@ $jenis = isset($_GET['jenis']) ? $_GET['jenis'] : 'Tidak Ada Jenis';
                     <input type="file" class="form-control" id="BuktiTransfer">
                 </div>
             </div>
+            <div class="col-3" style="text-align-last: right;">
+                <button name="submit">Submit</button>
+            </div>
+
         </div>
+    </form>
     </div>
+
 </body>
 
 </html>
