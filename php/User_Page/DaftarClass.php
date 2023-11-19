@@ -12,8 +12,9 @@ if (isset($_POST['submit'])) {
     $EmailPendaftar = $_POST['EmailPendaftar'];
     $Umur = $_POST['Umur'];
     $JenisKelamin = $_POST['JenisKelamin'];
+    $BuktiTransfer = $_POST['BuktiTransfer'];
 
-    $sql = "INSERT INTO detail_user (nama,tanggal_lahir,pekerjaan,no_hp,alamat,email,umur,jenis_kelamin,tempat_lahir) VALUES ('$NamaPendaftar','$TanggalLahir','$Pekerjaan','$NomorHP','$Alamat','$EmailPendaftar','$Umur','$JenisKelamin','$TempatLahir')";
+    $sql = "INSERT INTO detail_user (nama,tanggal_lahir,pekerjaan,no_hp,alamat,email,umur,jenis_kelamin,tempat_lahir,bukti_transfer) VALUES ('$NamaPendaftar','$TanggalLahir','$Pekerjaan','$NomorHP','$Alamat','$EmailPendaftar','$Umur','$JenisKelamin','$TempatLahir','$BuktiTransfer')";
     $result = mysqli_query($conn, $sql);
 }
 
@@ -111,7 +112,7 @@ if (isset($_POST['submit'])) {
                     <label class="form-check-label" for="inlineRadio1">Laki-laki</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="JeinisKelamin" id="inlineRadio2" value="P">
+                    <input class="form-check-input" type="radio" name="JenisKelamin" id="inlineRadio2" value="P">
                     <label class="form-check-label" for="inlineRadio2">Perempuan</label>
                 </div>
             </div>
@@ -136,7 +137,7 @@ if (isset($_POST['submit'])) {
             <div class="col-9" style="padding-top: 2%;">
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="BuktiTransfer">Upload</label>
-                    <input type="file" class="form-control" id="BuktiTransfer">
+                    <input type="file" class="form-control" id="BuktiTransfer" name="BuktiTransfer">
                 </div>
             </div>
             <div class="col-3" style="text-align-last: right;">
