@@ -133,22 +133,22 @@
         <div class="logo">Dana English Course</div>
             <ul class="menu">
                 <li>
-                    <a href="#"><i class="fa fa-tachometer-alt"></i><span> Dashboard</span></a>
+                    <a href="home.php"><i class="fa fa-tachometer-alt"></i><span> Dashboard</span></a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-graduation-cap"></i><span> Class</span></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-book"></i><span> Report</span></a>
+                    <a href="reportSiswa.php"><i class="fa fa-book"></i><span> Report</span></a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-archive"></i><span> Buy Package</span></a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-calendar"></i><span> Schedule</span></a>
+                    <a href="schedule.php"><i class="fa fa-calendar"></i><span> Schedule</span></a>
                 </li>
                 <li class="logout">
-                    <a href="#"><i class="fa fa-sign-out"></i><span> Log out</span></a>
+                    <a href="../Login_Logout/logout.php"><i class="fa fa-sign-out"></i><span> Log out</span></a>
                 </li>
             </ul>
         </div>
@@ -168,7 +168,11 @@
                     <td>Class</td>
                     <td >:<?php  
                             $id = $res2['Id_Siswa'];
-                            $sql2 = "SELECT * FROM class WHERE Id_Siswa = $id";
+                            $sql2 = "SELECT *
+                            FROM `user`
+                            JOIN class ON `user`.Id_Class = class.Id_class
+                            WHERE `user`.Id_User = $id;
+                            ";
                             $res = mysqli_query($conn,$sql2);
                             $res2 = mysqli_fetch_assoc($res);
                             echo " ";

@@ -1,7 +1,7 @@
 <?php
 include '../../connection.php';
 
-$query = "SELECT * FROM guru";
+$query = "SELECT * FROM user where Jenis_User = 2";
 $result = $conn->query($query);
 
 if ($result->num_rows > 0) {

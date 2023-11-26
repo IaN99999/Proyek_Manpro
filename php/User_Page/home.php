@@ -86,17 +86,20 @@ session_start();
     .one {
       margin-top: 5%;
       background-image: url('../../assets/asset_web/db1.png');
+      background-repeat: no-repeat;
     }
 
     .two {
       margin-top: 24%;
       background-image: url('../../assets/asset_web/db2.png');
+      background-repeat: no-repeat;
     }
 
     .three {
       margin-top: 43%;
       margin-bottom: 5%;
       background-image: url('../../assets/asset_web/db3.png');
+      background-repeat: no-repeat;
     }
 
     .btn {
@@ -125,12 +128,12 @@ session_start();
   <div class="vernav">
     <ul>
       <li><a class="logo" href="#">Dana English Course</a></li>
-      <li><a class="active" href="dashboard.php"><img src="../../assets/asset_web/dash.png"> Dashboard</a></li>
-      <li><a href="#news"><img src="../../assets/asset_web/class.png"> Class</a></li>
-      <li><a href="#contact"><img src="../../assets/asset_web/Paper.png"> Report</a></li>
-      <li><a href="#contact"><img src="../../assets/asset_web/buy.png"> Buy Package</a></li>
-      <li><a href="#contact"><img src="../../assets/asset_web/date.png"> Schedule</a></li>
-      <li><a class="about" href="#about"><img class="out" src="../../assets/asset_web/out.png"> Log Out</a></li>
+      <li><a class="active" href="home.php"><img src="../../assets/asset_web/dash.png"> Dashboard</a></li>
+      <li><a href="#"><img src="../../assets/asset_web/class.png"> Class</a></li>
+      <li><a href="reportSiswa.php"><img src="../../assets/asset_web/Paper.png"> Report</a></li>
+      <li><a href="#"><img src="../../assets/asset_web/buy.png"> Buy Package</a></li>
+      <li><a href="schedule.php"><img src="../../assets/asset_web/date.png"> Schedule</a></li>
+      <li><a class="about" href="../Login_Logout/logout.php"><img class="out" src="../../assets/asset_web/out.png"> Log Out</a></li>
     </ul>
   </div>
 

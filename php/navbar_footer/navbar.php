@@ -44,13 +44,13 @@
 
                 </ul>
                 <div class="mx-auto"></div>
-                <ul class="navbar-nav">
+                <ul class="navbar-nav" style="gap: 10px;">
 
                     <li class="nav-item">
-                        <a href="../Login_Logout/login.php" class="nav-link text-white">Login</a>
+                        <a  href="../Login_Logout/login.php" class="btn btn-primary">Login</a>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-primary mx-md-2">Join Us</button>
+                    <a class="btn btn-primary" href="../Join_Us/pendaftaran.php" role="button">Join Us</a>
                     </li>
                 </ul>
             </div>
