@@ -1,4 +1,19 @@
 <?php include 'NavbarAdmin.php'; ?>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var currentLocation = window.location.href;
+
+        var navLinks = document.querySelectorAll("nav ul li a");
+
+        navLinks.forEach(function(link) {
+            if (link.href === currentLocation) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    });
+</script>
 <div class="container" style="margin-top: 13%;">
     <div class="row">
         <div class="col-6">
@@ -8,45 +23,44 @@
 </div>
 
 <script>
-  var xmlhttp = new XMLHttpRequest();
-var url = "SQL/GETDATACLASS.php"; // Ganti dengan path yang sesuai
+    var xmlhttp = new XMLHttpRequest();
+    var url = "SQL/GETDATACLASS.php"; // Ganti dengan path yang sesuai
 
-xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        // Parsing data JSON
-        var data = JSON.parse(this.responseText);
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // Parsing data JSON
+            var data = JSON.parse(this.responseText);
 
-        // Panggil fungsi untuk membuat chart
-        console.log(data);
-        createChart(data);
-    }
-};
-
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
-//class, murid , guru
-function createChart(data) {
-    // console.log(data.values);
-    const chartData = {
-        labels: data.labels, // Use the labels from your AJAX response
-        datasets: [{
-            label: 'class',
-            data: [data], // Use the values from your AJAX response
-            backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)'
-            ],
-            hoverOffset: 4
-        }]
+            // Panggil fungsi untuk membuat chart
+            console.log(data);
+            createChart(data);
+        }
     };
 
-    new Chart("myPieChart", {
-        type: 'doughnut',
-        data: chartData,
-    });
-}
+    xmlhttp.open("GET", url, true);
+    xmlhttp.send();
+    //class, murid , guru
+    function createChart(data) {
+        // console.log(data.values);
+        const chartData = {
+            labels: data.labels, // Use the labels from your AJAX response
+            datasets: [{
+                label: 'class',
+                data: [data], // Use the values from your AJAX response
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                hoverOffset: 4
+            }]
+        };
 
+        new Chart("myPieChart", {
+            type: 'doughnut',
+            data: chartData,
+        });
+    }
 </script>
 
 

@@ -4,8 +4,14 @@ include '../connection.php';
 session_start();
 
 if (isset($_SESSION['username'])) {
-    header("Location: ../User_Page/home.php");
-    exit();
+    if ($_SESSION['nama_jenis_user'] == "Murid") {
+        # code...
+        header("Location: ../User_Page/home.php");
+        exit();
+    }
+    else if ($_SESSION['nama_jenis_user'] == "Guru") {
+        # code...
+    }
 }
 
 if (isset($_POST['submit'])) {
@@ -13,15 +19,23 @@ if (isset($_POST['submit'])) {
     $email =  $_POST['email'];
     $password =  $_POST['password']; // Hash the input password using SHA-256
 
-    $sql = "SELECT * FROM user WHERE Email='$email' AND Password='$password'";
+    $sql = "SELECT * FROM user join jenis_user on user.Jenis_user = jenis_user.Id  WHERE Email='$email' AND Password='$password'";
     $result = mysqli_query($conn, $sql);
 
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
         $_SESSION['username'] = $row['Nama_User'];
+        if ($row['Nama_Jenis'] == "Murid") {
+            $_SESSION['nama_jenis_user'] = $row['Nama_Jenis'];
+            header("Location: ../User_Page/home.php");
+            exit();
+        }
+        else if ($row['Nama_Jenis'] == "Guru") {
+            # code...
+            $_SESSION['nama_jenis_user'] = $row['Nama_Jenis'];
+            
+        }
         // echo "<script>alert('jadi')</script>";
-        header("Location: ../User_Page/home.php");
-        exit();
     } else {
         echo "<script>alert('Email atau password Anda salah. Silakan coba lagi!')</script>";
     }

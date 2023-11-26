@@ -3,10 +3,10 @@
 include '../connection.php';
 session_start();
 
-if (isset($_SESSION['usernameAdmin'])) {
-    header("Location: ../Admin_Page/indexAdmin.php");
-    exit();
-}
+// if (isset($_SESSION['usernameAdmin'])) {
+//     header("Location: ../Admin_Page/indexAdmin.php");
+//     exit();
+// }
 
 if (isset($_POST['submit'])) {
     // echo "owjdowajd";
