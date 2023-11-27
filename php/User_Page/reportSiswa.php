@@ -145,7 +145,8 @@
                     <a href="#"><i class="fa fa-archive"></i><span> Buy Package</span></a>
                 </li>
                 <li>
-                    <a href="schedule.php"><i class="fa fa-calendar"></i><span> Schedule</span></a>
+                    <!-- <a href="schedule.php"><i class="fa fa-calendar"></i><span> Schedule</span></a> -->
+                    <a href="penjadwalan.php"><i class="fa fa-calendar"></i><span> Schedule</span></a>
                 </li>
                 <li class="logout">
                     <a href="../Login_Logout/logout.php"><i class="fa fa-sign-out"></i><span> Log out</span></a>

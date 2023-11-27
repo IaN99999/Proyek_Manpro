@@ -3,25 +3,16 @@
 <head>
     <title>Course Schedule</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/boostrap@5.3.0/dist/js/bootstrap.bundle.min.js></script>
+    <script src="https://cdn.jsdelivr.net/npm/boostrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <?php include 'navbar_footer/navbar.php'; ?>
+    <!-- <?php include 'navbar_footer/navbar.php'; ?> -->
 
     <h1>Jadwal Kursus Bahasa Inggris</h1>
 
     <div class="jadwal-container">
         <?php
-        $servername = "localhost";
-        $username = "username";
-        $password = "password";
-        $dbname = "manpro";
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        if ($conn->connect_error) {
-            die("Koneksi gagal: " . $conn->connect_error);
-        }
+        include '../connection.php';
 
         $sql = "SELECT jadwal.Id_Jadwal, class.Nama_Class, jadwal.Tanggal_Jadwal FROM jadwal INNER JOIN class ON jadwal.Id_Class = class.Id_Class";
         $result = $conn->query($sql);
@@ -51,7 +42,7 @@
         ?>
     </div>
 
-    <?php include 'navbar_footer/footer.php'; ?>
+    <!-- <?php include 'navbar_footer/footer.php'; ?> -->
 
 </body>
 </html>

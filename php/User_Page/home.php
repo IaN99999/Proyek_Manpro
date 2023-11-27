@@ -132,7 +132,7 @@ session_start();
       <li><a href="#"><img src="../../assets/asset_web/class.png"> Class</a></li>
       <li><a href="reportSiswa.php"><img src="../../assets/asset_web/Paper.png"> Report</a></li>
       <li><a href="#"><img src="../../assets/asset_web/buy.png"> Buy Package</a></li>
-      <li><a href="schedule.php"><img src="../../assets/asset_web/date.png"> Schedule</a></li>
+      <li><a href="penjadwalan.php"><img src="../../assets/asset_web/date.png"> Schedule</a></li>
       <li><a class="about" href="../Login_Logout/logout.php"><img class="out" src="../../assets/asset_web/out.png"> Log Out</a></li>
     </ul>
   </div>

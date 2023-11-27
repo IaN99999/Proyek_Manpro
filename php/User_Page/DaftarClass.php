@@ -16,6 +16,8 @@ if (isset($_POST['submit'])) {
 
     $sql = "INSERT INTO detail_user (nama,tanggal_lahir,pekerjaan,no_hp,alamat,email,umur,jenis_kelamin,tempat_lahir,bukti_transfer) VALUES ('$NamaPendaftar','$TanggalLahir','$Pekerjaan','$NomorHP','$Alamat','$EmailPendaftar','$Umur','$JenisKelamin','$TempatLahir','$BuktiTransfer')";
     $result = mysqli_query($conn, $sql);
+
+    $sql = "INSERT INTO payment ()";
 }
 
 

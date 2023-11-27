@@ -6,7 +6,7 @@ session_start();
 if (isset($_SESSION['username'])) {
     if ($_SESSION['nama_jenis_user'] == "Murid") {
         # code...
-        header("Location: ../User_Page/home.php");
+        header("Location: ../User_Page/home2.php");
         exit();
     }
     else if ($_SESSION['nama_jenis_user'] == "Guru") {
@@ -27,13 +27,14 @@ if (isset($_POST['submit'])) {
         $_SESSION['username'] = $row['Nama_User'];
         if ($row['Nama_Jenis'] == "Murid") {
             $_SESSION['nama_jenis_user'] = $row['Nama_Jenis'];
-            header("Location: ../User_Page/home.php");
+            header("Location: ../User_Page/home2.php");
             exit();
         }
         else if ($row['Nama_Jenis'] == "Guru") {
             # code...
             $_SESSION['nama_jenis_user'] = $row['Nama_Jenis'];
-            
+            header("Location: ../Guru_Page/daftarSiswa.php");
+            exit();
         }
         // echo "<script>alert('jadi')</script>";
     } else {

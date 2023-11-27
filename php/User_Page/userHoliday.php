@@ -74,10 +74,10 @@ $result = mysqli_query($conn,$query)
                 <h4>Table List</h4> 
                 <div class="table">
                 <table>
-                    <thead style="padding=10px;">
+                    <thead style="padding:10px;">
                         <tr>
-                            <th style="width=30%;">Date</th>
-                            <th style="width=50%;">Description</th>
+                            <th style="width:30%;">Date</th>
+                            <th style="width:50%;">Description</th>
         
                         </tr>
                         <tr>

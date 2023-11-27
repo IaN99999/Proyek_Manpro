@@ -4,7 +4,7 @@
 
 
 //select guru buat di tampilin di data
-$sql = "SELECT * FROM class JOIN guru ON class.Id_Guru = guru.Id_Guru";
+$sql = "SELECT * FROM class JOIN user ON class.Id_Guru = user.Id_User WHERE Jenis_User = 2";
 $result = $conn->query($sql);
 
 // Memeriksa hasil query
@@ -59,7 +59,7 @@ $conn->close();
             <?php foreach ($data as $loopIndex => $row) : ?>
                 <tr>
                     <th scope="row"><?= $loopIndex + 1 ?></th>
-                    <td><?= $row['Nama_Guru'] ?></td>
+                    <td><?= $row['Nama_User'] ?></td>
                     <td><?= $row['Nama_Class'] ?></td>
                     <td>
                         <button type="button" class="btn btn-warning">Edit</button>

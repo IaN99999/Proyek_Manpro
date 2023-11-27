@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container" style="padding-top: 4%;text-align-last: center;padding-bottom: 4%;">
     <h1>Daftar Harga Kursus Bahasa Inggris</h1>
     <div class="row">
         <?php
