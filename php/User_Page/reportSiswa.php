@@ -1,9 +1,9 @@
 <?php 
     include "../connection.php";
-    $sql = "SELECT * FROM `siswa` WHERE `Id_Siswa` = 1";
+    $sql = "SELECT * FROM `user` WHERE `Id_User` = 1";
     $res = mysqli_query($conn,$sql);
     $res2 = mysqli_fetch_assoc($res);
-    $id = $res2['Id_Siswa'];
+    $id = $res2['Id_User'];
 ?>
 
 <!DOCTYPE html>
@@ -163,12 +163,12 @@
             <table>
                 <tr>
                     <td>Name</td>
-                    <td >:<?=" "?><?=$res2['Nama_Siswa']; ?></td>
+                    <td >:<?=" "?><?=$res2['Nama_User']; ?></td>
                 </tr>
                 <tr>
                     <td>Class</td>
                     <td >:<?php  
-                            $id = $res2['Id_Siswa'];
+                            $id = $res2['Id_User'];
                             $sql2 = "SELECT *
                             FROM `user`
                             JOIN class ON `user`.Id_Class = class.Id_class

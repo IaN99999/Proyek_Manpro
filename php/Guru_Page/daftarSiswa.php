@@ -1,6 +1,6 @@
 <?php 
     include "connection.php";
-    $sql = "SELECT * FROM siswa";
+    $sql = "SELECT * FROM user WHERE Jenis_User = 1 AND Id_Class != 0";
     $result = mysqli_query($conn,$sql);
 ?>
 
@@ -146,7 +146,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="student-info">
-                    <p>Name: <?php echo $row['Nama_Siswa'];?></p>
+                    <p>Name: <?php echo $row['Nama_User'];?></p>
                     <p>Class: <?php  
                         $id = $row['Id_Class'];
                         $sql2 = "SELECT * FROM class WHERE Id_Class = $id";
@@ -154,12 +154,12 @@
                         $result2 = mysqli_fetch_assoc($res);
                         echo $result2['Nama_Class'];
                     ?></p>
-                    <p>No Pendaftaran: <?php echo $row['Id_Siswa'];?></p>
+                    <p>No Pendaftaran: <?php echo $row['Id_User'];?></p>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="check">
-                    <a href="detailNilaiSiswa.php?id=<?= $row['Id_Siswa']; ?>">
+                    <a href="detailNilaiSiswa.php?id=<?= $row['Id_User']; ?>">
                         <button type="button" class="btn">Check</button>
                     </a>
                 </div>

@@ -1,7 +1,7 @@
 <?php
     include "connection.php";
     $id = $_GET['id'];
-    $sql = "SELECT * FROM siswa WHERE Id_Siswa = $id";
+    $sql = "SELECT * FROM user WHERE Id_User = $id";
     $result = mysqli_query($conn,$sql);
     $result2 = mysqli_fetch_assoc($result);
 ?>
@@ -175,13 +175,13 @@
             <table>
                 <tr>
                     <td>Name</td>
-                    <td >:<?=" "?><?=$result2['Nama_Siswa']; ?></td>
+                    <td >:<?=" "?><?=$result2['Nama_User']; ?></td>
                 </tr>
                 <tr>
                     <td>Class</td>
                     <td >:<?php  
-                            $id = $result2['Id_Siswa'];
-                            $sql2 = "SELECT * FROM class WHERE Id_Siswa = $id";
+                            $id_class = $result2['Id_Class'];
+                            $sql2 = "SELECT * FROM class WHERE Id_Class = $id_class";
                             $res = mysqli_query($conn,$sql2);
                             $res2 = mysqli_fetch_assoc($res);
                             echo " ";
