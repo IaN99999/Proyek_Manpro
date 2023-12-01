@@ -10,7 +10,8 @@ if (isset($_SESSION['username'])) {
         exit();
     }
     else if ($_SESSION['nama_jenis_user'] == "Guru") {
-        # code...
+        header("Location: ../Guru_Page/daftarSiswa.php");
+        exit();
     }
 }
 
