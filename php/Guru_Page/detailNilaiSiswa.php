@@ -221,13 +221,10 @@
                 echo "<meta http-equiv='refresh' content='0'>";
             }
             if(isset($_POST['editsubmit'])){
-                $sql3 = "SELECT * FROM nilai WHERE Id_Siswa = $id";
-                $res = mysqli_query($conn,$sql3);
-                $res2 = mysqli_fetch_assoc($res);
                 $type = $_POST['type'];
                 $score = $_POST['score'];
                 $notes = $_POST['notes'];
-                $id_nilai = $res2['Id_Nilai'];
+                $id_nilai = $_POST['id_nilai'];
 
                 $sql = "UPDATE `nilai` SET `Nilai`='$score',`Tipe`='$type',`Keterangan`='$notes' WHERE `Id_Nilai` = '$id_nilai'";
                 $res = mysqli_query($conn,$sql);

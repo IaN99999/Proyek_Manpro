@@ -28,12 +28,14 @@ if (isset($_POST['submit'])) {
         $_SESSION['username'] = $row['Nama_User'];
         if ($row['Nama_Jenis'] == "Murid") {
             $_SESSION['nama_jenis_user'] = $row['Nama_Jenis'];
+            $_SESSION['id'] = $row['Id_User'];
             header("Location: ../User_Page/home2.php");
             exit();
         }
         else if ($row['Nama_Jenis'] == "Guru") {
             # code...
             $_SESSION['nama_jenis_user'] = $row['Nama_Jenis'];
+            $_SESSION['id'] = $row['Id_User'];
             header("Location: ../Guru_Page/daftarSiswa.php");
             exit();
         }

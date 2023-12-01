@@ -1,9 +1,11 @@
 <?php 
     include "../connection.php";
-    $sql = "SELECT * FROM `user` WHERE `Id_User` = 1";
+    session_start();
+    $username = $_SESSION['username'];
+    $id = $_SESSION['id'];
+    $sql = "SELECT * FROM `user` WHERE `Id_User` = $id";
     $res = mysqli_query($conn,$sql);
     $res2 = mysqli_fetch_assoc($res);
-    $id = $res2['Id_User'];
 ?>
 
 <!DOCTYPE html>
@@ -92,6 +94,7 @@
             text-align: right;
             padding-right: 15px;
             padding-top : 15px;
+            text-transform: uppercase;
 
         }
         .student-info{
@@ -157,7 +160,7 @@
 
     <div class="container">
         <div class="user">
-                <h4 class="welcome">WELCOME USER</h4>
+                <h4 class="welcome">WELCOME <?php echo $username;?></h4>
         </div>
         <div class="student-info">
             <table>
@@ -219,7 +222,7 @@
             </div>
             <div class="col-6" >
                 <div class="btnback" style="float:right;">
-                    <a href=""><button type="button">< Back</button></a>
+                    <a href="home2.php"><button type="button">< Back</button></a>
                 </div>
             </div>
         </div>
