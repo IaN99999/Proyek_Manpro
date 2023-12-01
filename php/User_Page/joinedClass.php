@@ -14,7 +14,7 @@
         <div class="logo">Dana English Course</div>
         <ul class="menu">
             <li>
-                <a href="home2.php"><i class="fa fa-tachometer-alt"></i><span> Dashboard</span></a>
+                <a href="home.php"><i class="fa fa-tachometer-alt"></i><span> Dashboard</span></a>
             </li>
             <li>
                 <a href="joinedClass.php"><i class="fa fa-graduation-cap"></i><span> Class</span></a>
@@ -26,7 +26,7 @@
                 <a href="#"><i class="fa fa-archive"></i><span> Buy Package</span></a>
             </li>
             <li>
-                <a href="buypackage.php"><i class="fa fa-calendar"></i><span> Schedule</span></a>
+                <a href="penjadwalan.php"><i class="fa fa-calendar"></i><span> Schedule</span></a>
             </li>
             <li class="logout">
                 <a href="#"><i class="fa fa-sign-out"></i><span> Log out</span></a>
@@ -56,7 +56,7 @@
                 
             </div>
             <div class="button">
-                <button class="button-1"><a href="detailedClass.php" style="color: white; text-decoration: none;">See Details</a></button>
+                <button class="button-1"><a href="schedule.php" style="color: white; text-decoration: none;">See Details</a></button>
             </div>
         </div>
 

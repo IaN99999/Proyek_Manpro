@@ -50,6 +50,7 @@
                 <span>WELCOME </span>
                 <span id="namauser"></span>
             </div>
+            
         </div>
 
         <div class="cardcontainer">

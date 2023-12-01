@@ -1,5 +1,9 @@
 <?php
-$jenis = "Beginner";
+    if (isset($_POST['join'])){
+         header("Location: DaftarClass.php?page=1");
+         exit();
+    }
+   
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +21,7 @@ $jenis = "Beginner";
         <div class="logo">Dana English Course</div>
         <ul class="menu">
             <li>
-                <a href="home2.php"><i class="fa fa-tachometer-alt"></i><span> Dashboard</span></a>
+                <a href="home.php"><i class="fa fa-tachometer-alt"></i><span> Dashboard</span></a>
             </li>
             <li>
                 <a href="joinedClass.php"><i class="fa fa-graduation-cap"></i><span> Class</span></a>
@@ -29,7 +33,7 @@ $jenis = "Beginner";
                 <a href="#"><i class="fa fa-archive"></i><span> Buy Package</span></a>
             </li>
             <li>
-                <a href="buypackage.php"><i class="fa fa-calendar"></i><span> Schedule</span></a>
+                <a href="userHoliday.php"><i class="fa fa-calendar"></i><span> Schedule</span></a>
             </li>
             <li class="logout">
                 <a href="../Login_Logout/logout.php"><i class="fa fa-sign-out"></i><span> Log out</span></a>
@@ -89,9 +93,12 @@ $jenis = "Beginner";
           
         </div>    
         
+        <form method="post">
             <div class="button">
-                 <a href="DaftarClass.php" class="button">Join Class</a>
+                 <a href="DaftarClass.php?page=1" class="button" name="join">Join Class</a>
             </div>
+      
+        </form>
       
        
     

@@ -7,176 +7,109 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Latest compiled JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      width: 20%;
-      background-color: #f1f1f1;
-      position: fixed;
-      height: 100%;
-      overflow: auto;
-      background-image: url('../../assets/asset_web/bg3.png');
-    }
-
-    li a {
-      display: block;
-      color: #F5F7F8;
-      padding: 16px 16px;
-      text-decoration: none;
-      text-align: center;
-      font-size: 15px;
-    }
-
-    /* li a.active {}
-
-    li a:hover:not(.active) {} */
-
-    .logo {
-      padding: 30px 20px;
-      font-size: 20px;
-    }
-
-    .about {
-      margin-top: 140px;
-    }
-
-    .welcome {
-      padding-left: 55%;
-      padding-top: 15px;
-
-    }
-
-    .user {
-      width: 100%;
-      background-color: white;
-      position: fixed;
-      z-index: 1;
-    }
-
-    .container {
-      width: 70%;
-      height: 37%;
-      margin-top: 5%;
-      margin-left: 3.5%;
-      position: absolute;
-      background-size: 885px 210px;
-
-    }
-
-    .one {
-      margin-top: 5%;
-      background-image: url('../../assets/asset_web/db1.png');
-      background-repeat: no-repeat;
-    }
-
-    .two {
-      margin-top: 24%;
-      background-image: url('../../assets/asset_web/db2.png');
-      background-repeat: no-repeat;
-    }
-
-    .three {
-      margin-top: 43%;
-      margin-bottom: 5%;
-      background-image: url('../../assets/asset_web/db3.png');
-      background-repeat: no-repeat;
-    }
-
-    .btn {
-      position: relative;
-      float: right;
-      top: 55%;
-      color: white;
-
-    }
-
-    .title {
-      position: relative;
-      top: 4%;
-      left: 1%;
-      color: white;
-    }
-
-    img {
-      width: 20px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-  <div class="vernav">
-    <ul>
-      <li><a class="logo" href="#">Dana English Course</a></li>
-      <li><a class="active" href="home.php"><img src="../../assets/asset_web/dash.png"> Dashboard</a></li>
-      <li><a href="#"><img src="../../assets/asset_web/class.png"> Class</a></li>
-      <li><a href="reportSiswa.php"><img src="../../assets/asset_web/Paper.png"> Report</a></li>
-      <li><a href="#"><img src="../../assets/asset_web/buy.png"> Buy Package</a></li>
-      <li><a href="penjadwalan.php"><img src="../../assets/asset_web/date.png"> Schedule</a></li>
-      <li><a class="about" href="../Login_Logout/logout.php"><img class="out" src="../../assets/asset_web/out.png"> Log Out</a></li>
-    </ul>
-  </div>
-
-
-
-  <div style="margin-left:20%;padding:0px 16px;">
-    <div class="user">
-      <h4 class="welcome">WELCOME <span id="namauser"></span></h4>
+    <div class="sidebar">
+        <div class="logo">Dana English Course</div>
+        <ul class="menu">
+            <li>
+                <a href="home.php"><i class="fa fa-tachometer-alt"></i><span> Dashboard</span></a>
+            </li>
+            <li>
+                <a href="joinedClass.php"><i class="fa fa-graduation-cap"></i><span> Class</span></a>
+            </li>
+            <li>
+                <a href="reportSiswa.php"><i class="fa fa-book"></i><span> Report</span></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-archive"></i><span> Buy Package</span></a>
+            </li>
+            <li>
+                <a href="userHoliday.php"><i class="fa fa-calendar"></i><span> Schedule</span></a>
+            </li>
+            <li class="logout">
+                <a href="../Login_Logout/logout.php"><i class="fa fa-sign-out"></i><span> Log out</span></a>
+            </li>
+        </ul>
     </div>
+    
 
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>Primary</span>
+                <h2>Dashboard</h2>
+            </div>
+            <div class="user--info">
+                <span>WELCOME </span>
+                <span id="namauser"></span>
+            </div>
+        </div>
+        <div class="card--container">
+            <h3 class="main--title">Class Offered</h3>
+        </div>
+        <div class="image--1">
+            <div class="image--title1">
+                <h1>Beginner</h1>
+                <span>Beginner Class 1 Semester</span><br>
+                <div class="isi">
+                
+                <span>Lessons : English Alphabet, Verb to Be, Vowel / Consonants,..</span>
+                </div>
+                
+            </div>
+            <div class="button">
+                <a href="paymentBeginner.php" style="text-decoration: none;"><button class="button-1" >Join Class</button></a>
+            </div>
+        </div>
 
-    <div class="container one">
-      <div class="title">
-        <h3>Beginner</h3>
-      </div>
-      <a class="btn btn-primary" href="DaftarClass.php?jenis=Beginner" role="button">Join Class</a>
+        <div class="image--2">
+            <div class="image--title1">
+                <h1>Intermediate</h1>
+                <span>Beginner Class 1 Semester</span><br>
+                <div class="isi">
+                
+                <span>Lessons : English Alphabet, Verb to Be, Vowel / Consonants,..</span>
+                </div>
+                
+            </div>
+            <div class="button">
+            <a href="paymentInter.php" style="text-decoration: none;"><button class="button-1" >Join Class</button></a>
+            </div>
+        </div>
+
+        <div class="image--3">
+            <div class="image--title1">
+                <h1>Expert</h1>
+                <span>Beginner Class 1 Semester</span><br>
+                <div class="isi">
+                
+                <span>Lessons : English Alphabet, Verb to Be, Vowel / Consonants,..</span>
+                </div>
+                
+            </div>
+            <div class="button">
+            <a href="paymentEx.php" style="text-decoration: none;"><button class="button-1" >Join Class</button></a>
+            </div>
+        </div>
+       
+        
+
+        
     </div>
-
-    <div class="container two">
-      <div class="title">
-        <h3>Intermediate</h3>
-      </div>
-      <a class="btn btn-primary" href="DaftarClass.php?jenis=Intermediate" role="button">Join Class</a>
-    </div>
-
-
-    <div class="container three">
-      <div class="title">
-        <h3>Expert</h3>
-      </div>
-      <a class="btn btn-primary" href="DaftarClass.php?jenis=Expert" role="button">Join Class</a>
-    </div>
-
-
-
-
-
-  </div>
-  <script>
+    
+    <script>
     let namauser = document.getElementById("namauser");
     namauser.textContent = "<?php echo $_SESSION['username']; ?>"
   </script>
 
 </body>
-
 </html>
