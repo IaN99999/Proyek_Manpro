@@ -4,7 +4,7 @@
 
 
 //select guru buat di tampilin di data
-$sql = "SELECT * FROM class JOIN user ON class.Id_Guru = user.Id_User WHERE Jenis_User = 2";
+$sql = "SELECT * FROM class_type";
 $result = $conn->query($sql);
 
 // Memeriksa hasil query
@@ -42,7 +42,6 @@ $conn->close();
 
         </div>
         <div class="col-6" style="text-align-last: right;">
-            <button type="button" class="btn btn-success" id="addbtn" data-bs-toggle="modal" data-bs-target="#myModal">+ADD</button>
             <!-- <button type="button" class="btn btn-warning">Warning</button> -->
         </div>
     </div>
@@ -50,7 +49,6 @@ $conn->close();
         <thead>
             <tr>
                 <th scope="col">No</th>
-                <th scope="col">Teacher</th>
                 <th scope="col">Class</th>
                 <th scope="col">Action</th>
             </tr>
@@ -59,42 +57,16 @@ $conn->close();
             <?php foreach ($data as $loopIndex => $row) : ?>
                 <tr>
                     <th scope="row"><?= $loopIndex + 1 ?></th>
-                    <td><?= $row['Nama_User'] ?></td>
-                    <td><?= $row['Nama_Class'] ?></td>
+                    <td><?= $row['Nama_Jenis'] ?></td>
                     <td>
-                        <button type="button" class="btn btn-warning">Edit</button>
-                        <button type="button" class="btn btn-danger">Hapus</button>
+                        <a class="btn btn-warning" href="jenisclass.php?jenis=<?= $row['Nama_Jenis'] ?>" role="button">Check</a>
+                        <!-- <button type="button" class="btn btn-warning">Check</button> -->
                     </td>
                 </tr>
             <?php endforeach; ?>
 
         </tbody>
     </table>
-</div>
-<!-- The Modal -->
-<div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h4 class="modal-title">Modal Heading</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-                Modal body..
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-bs-dismiss="modal">ADD</button>
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div>
-
-        </div>
-    </div>
 </div>
 
 </body>

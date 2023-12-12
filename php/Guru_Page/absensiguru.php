@@ -1,12 +1,22 @@
 <?php
 include '../connection.php';
+session_start();
 
+$username = $_SESSION['username'];
 // Mengambil data dari tabel
+
+
+$sql = "SELECT * FROM user WHERE Nama_User = '$username' AND Jenis_User = '2'";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$iduser = $row['Id_User'];
+
+
 $sql = "SELECT *
-FROM guru
-JOIN class ON guru.id_class = class.Id_Class
-JOIN jadwal ON class.Id_Class = jadwal.Id_Class;
-";
+FROM user
+JOIN class ON user.id_class = class.Id_Class
+JOIN jadwal ON class.Id_Class = jadwal.Id_Class
+WHERE user.Id_User = $iduser;";
 $result = $conn->query($sql);
 
 // Memeriksa hasil query
@@ -153,7 +163,7 @@ li a:hover:not(.active) {
               <h3 style="color: black; padding-top:4%"><b>PERTEMUAN <?= $loopIndex + 1 ?></b></h3>
 
               <p style="color:black">DATE/TIME :  <?= $row['Tanggal_Jadwal'] ?>/10.30-13.30</p>
-              <p style="color:black">LECTURER : <?= $row['Nama_Guru'] ?></p>
+              <p style="color:black">LECTURER : <?= $row['Nama_User'] ?></p>
               <p style="color:black">LESSON : Introduction</p>
 
               <a class="btn btn-success" style="margin-right:32px; margin-bottom:7px" href="absensicheckguru.php" role="button">Check</a>
