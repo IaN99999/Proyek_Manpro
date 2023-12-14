@@ -1,5 +1,8 @@
 <?php
     include "connection.php";
+    include "../navbar_footer/sidebar.php";
+    session_start();
+    $username = $_SESSION['username'];
     $id = $_GET['id'];
     $sql = "SELECT * FROM user WHERE Id_User = $id";
     $result = mysqli_query($conn,$sql);
@@ -138,7 +141,7 @@
             height:196px;
         }
     </style>
-</head>
+<!-- </head>
 <body>
     <div class="sidebar">
         <div class="logo">Dana English Course</div>
@@ -159,17 +162,17 @@
                     <a href="#"><i class="fa fa-calendar"></i><span> Schedule</span></a>
                 </li>
                 <li class="logout">
-                    <a href="#"><i class="fa fa-sign-out"></i><span> Log out</span></a>
+                    <a href="../Login_Logout/logout.php"><i class="fa fa-sign-out"></i><span> Log out</span></a>
                 </li>
             </ul>
         </div>
-    </div>
+    </div> -->
 
         
 
     <div class="container">
         <div class="user">
-             <h4 class="welcome">WELCOME USER</h4>
+             <h4 class="welcome">WELCOME <?php echo $username;?></h4>
         </div>
         <div class="student-info">
             <table>

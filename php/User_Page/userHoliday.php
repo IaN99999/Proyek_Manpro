@@ -38,19 +38,19 @@ $result = mysqli_query($conn,$query)
         <div class="logo">Dana English Course</div>
         <ul class="menu">
             <li>
-                <a href="#"><i class="fa fa-tachometer-alt"></i><span> Dashboard</span></a>
+                <a href="home.php"><i class="fa fa-tachometer-alt"></i><span> Dashboard</span></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-graduation-cap"></i><span> Class</span></a>
+                <a href="joinedClass.php"><i class="fa fa-graduation-cap"></i><span> Class</span></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-book"></i><span> Report</span></a>
+                <a href="reportSiswa.php"><i class="fa fa-book"></i><span> Report</span></a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-archive"></i><span> Buy Package</span></a>
             </li>
             <li>
-                <a href="buypackage.php"><i class="fa fa-calendar"></i><span> Schedule</span></a>
+                <a href="#"><i class="fa fa-calendar"></i><span> Schedule</span></a>
             </li>
             <li class="logout">
                 <a href="#"><i class="fa fa-sign-out"></i><span> Log out</span></a>

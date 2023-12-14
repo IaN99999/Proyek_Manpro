@@ -1,6 +1,10 @@
 <?php 
     include "../connection.php";
     session_start();
+    if(!isset($_SESSION['username']) || $_SESSION['nama_jenis_user'] == "Guru"){
+        header("../Login_Logout/logout.php");
+        exit();
+    }
     $username = $_SESSION['username'];
     $id = $_SESSION['id'];
     $sql = "SELECT * FROM `user` WHERE `Id_User` = $id";

@@ -14,7 +14,76 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
     <style>
+                @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+        *{
+            margin: 0;
+            padding: 0;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            font-family: "Poppins";
+        }
         body {
+            display: flex;
+        }
+        .sidebar{
+            position: sticky;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 250px;
+            height: 100vh;
+            padding: 0 1.7rem;
+            color: #;
+            overflow: hifffdden;
+            transition: all 0.5s linear;
+            background-image: url("../../assets/asset_web/bg3.png");
+        }
+
+        .menu{
+            height: 88%;
+            position: relative;
+            list-style: none;
+            padding-top: 35px;
+            text-align: center;
+            padding-left: 0px;
+        }
+        .logo{
+            font-size: 18px;
+            height: 80px;
+            padding: 20px;
+            text-align: center;
+            overflow: initial;
+        
+        }
+
+        .menu li{
+            padding: 15px;
+            text-align: center;
+        }
+
+        .menu li a{
+            color: white;
+            text-decoration: none;
+            gap: 10px;
+            display: flex;
+            align-items: center;  
+        }
+
+        .menu li a:hover{
+            color:antiquewhite;
+        }
+
+        .menu span{
+            overflow: hidden;
+            
+        }
+        .logout{
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+        }
+        /* body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
         }
@@ -47,14 +116,14 @@
 li a:hover:not(.active) {
   
 } */
-        .logo {
+        /* .logo {
             padding: 30px 20px;
             font-size: 20px;
         }
 
         .about {
             margin-top: 140px;
-        }
+        } */
 
         .welcome {
             padding-left: 55%;
@@ -102,7 +171,7 @@ li a:hover:not(.active) {
 </head>
 
 <body>
-    <div class="vernav">
+    <!-- <div class="vernav">
         <ul>
             <li><a class="logo" href="#">Dana English Course</a></li>
             <li><a class="active" href="dashboard.php"><img src="../../assets/asset_web/dash.png"> Dashboard</a></li>
@@ -111,6 +180,30 @@ li a:hover:not(.active) {
             <li><a href="#contact"><img src="../../assets/asset_web/buy.png"> Buy Package</a></li>
             <li><a href="#contact"><img src="../../assets/asset_web/date.png"> Schedule</a></li>
             <li><a class="about" href="#about"><img class="out" src="../../assets/asset_web/out.png"> Log Out</a></li>
+        </ul>
+    </div> -->
+
+    <div class="sidebar">
+        <div class="logo">Dana English Course</div>
+        <ul class="menu">
+            <li>
+                <a href="home.php"><i class="fa fa-tachometer-alt"></i><span> Dashboard</span></a>
+            </li>
+            <li>
+                <a href="joinedClass.php"><i class="fa fa-graduation-cap"></i><span> Class</span></a>
+            </li>
+            <li>
+                <a href="reportSiswa.php"><i class="fa fa-book"></i><span> Report</span></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-archive"></i><span> Buy Package</span></a>
+            </li>
+            <li>
+                <a href="userHoliday.php"><i class="fa fa-calendar"></i><span> Schedule</span></a>
+            </li>
+            <li class="logout">
+                <a href="../Login_Logout/logout.php"><i class="fa fa-sign-out"></i><span> Log out</span></a>
+            </li>
         </ul>
     </div>
 

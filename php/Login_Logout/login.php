@@ -6,7 +6,7 @@ session_start();
 if (isset($_SESSION['username'])) {
     if ($_SESSION['nama_jenis_user'] == "Murid") {
         # code...
-        header("Location: ../User_Page/home2.php");
+        header("Location: ../User_Page/home.php");
         exit();
     }
     else if ($_SESSION['nama_jenis_user'] == "Guru") {
@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
         if ($row['Nama_Jenis'] == "Murid") {
             $_SESSION['nama_jenis_user'] = $row['Nama_Jenis'];
             $_SESSION['id'] = $row['Id_User'];
-            header("Location: ../User_Page/home2.php");
+            header("Location: ../User_Page/home.php");
             exit();
         }
         else if ($row['Nama_Jenis'] == "Guru") {

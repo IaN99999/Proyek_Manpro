@@ -1,5 +1,6 @@
 <?php
 include '../connection.php';
+include "../navbar_footer/sidebar.php";
 session_start();
 
 $username = $_SESSION['username'];
@@ -31,23 +32,111 @@ $conn->close();
 ?>
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
   <!-- Latest compiled JavaScript -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
   <style>
-    body {
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+        *{
+            margin: 0;
+            padding: 0;
+            border: none;
+            outline: none;
+            box-sizing: border-box;
+            font-family: "Poppins";
+        }
+        body {
+            display: flex;
+        }
+        .sidebar{
+            position: sticky;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 250px;
+            height: 100vh;
+            padding: 0 1.7rem;
+            color: #;
+            overflow: hifffdden;
+            transition: all 0.5s linear;
+            background-image: url("../../assets/asset_web/bg3.png");
+        }
+
+        .menu{
+            height: 88%;
+            position: relative;
+            list-style: none;
+            padding-top: 35px;
+            text-align: center;
+            padding-left: 0px;
+        }
+        .logo{
+            font-size: 18px;
+            height: 80px;
+            padding: 20px;
+            text-align: center;
+            overflow: initial;
+        
+        }
+
+        .menu li{
+            padding: 15px;
+            text-align: center;
+        }
+
+        .menu li a{
+            color: white;
+            text-decoration: none;
+            gap: 10px;
+            display: flex;
+            align-items: center;  
+        }
+
+        .menu li a:hover{
+            color:antiquewhite;
+        }
+
+        .menu span{
+            overflow: hidden;
+            
+        }
+        .logout{
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+        }
+
+        
+        .welcome{
+            text-align: right;
+            padding-right: 15px;
+            padding-top : 15px;
+
+        }
+        .check{
+            width:100%;
+            height:100%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+        }
+        .row{
+            padding:20px;
+            margin:30px 20px 30px;
+            background: #f3f3f3;
+        }
+        .btn{
+            background: #5aff72;
+        }
+    /* body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
     }
@@ -80,7 +169,7 @@ $conn->close();
 li a:hover:not(.active) {
   
 } */
-    .logo {
+    /* .logo {
       padding: 30px 20px;
       font-size: 20px;
     }
@@ -89,7 +178,7 @@ li a:hover:not(.active) {
       margin-top: 140px;
     }
 
-    .welcome {
+    /* .welcome {
       padding-left: 55%;
       padding-top: 15px;
 
@@ -100,7 +189,7 @@ li a:hover:not(.active) {
       background-color: white;
       position: fixed;
       z-index: 1;
-    }
+    } */
 
     .container {
       width: 70%;
@@ -111,7 +200,7 @@ li a:hover:not(.active) {
       background-size: 885px 210px;
 
     }
-
+ 
     .btn {
       position: relative;
       float: right;
@@ -129,13 +218,13 @@ li a:hover:not(.active) {
 
     img {
       width: 20px;
-    }
+    } 
   </style>
-</head>
+<!-- </head>
 
-<body>
+<body> -->
 
-  <div class="vernav">
+  <!-- <div class="vernav">
     <ul>
       <li><a class="logo" href="#">Dana English Course</a></li>
       <li><a class="active" href="dashboard.php"><img src="../../assets/asset_web/dash.png"> Dashboard</a></li>
@@ -145,7 +234,7 @@ li a:hover:not(.active) {
       <li><a href="#contact"><img src="../../assets/asset_web/date.png"> Schedule</a></li>
       <li><a class="about" href="#about"><img class="out" src="../../assets/asset_web/out.png"> Log Out</a></li>
     </ul>
-  </div>
+  </div> -->
 
 
 

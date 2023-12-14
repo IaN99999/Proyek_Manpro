@@ -28,7 +28,7 @@
                 <a href="joinedClass.php"><i class="fa fa-graduation-cap"></i><span> Class</span></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-book"></i><span> Report</span></a>
+                <a href="reportSiswa.php"><i class="fa fa-book"></i><span> Report</span></a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-archive"></i><span> Buy Package</span></a>
