@@ -122,6 +122,9 @@
                     <div class="col-6">
                         <input type="password" class="form-control" placeholder="Input password" id="input_pw" name="input_pw">
                     </div>
+                    <div class="col-1">
+                        <i class="fa-regular fa-eye-slash" id="togglePassword" style="color: white;"></i>
+                    </div>
                 </div>
                 <br>
                 <div class="row">
@@ -130,6 +133,9 @@
                     </div>
                     <div class="col-6">
                         <input type="password" class="form-control" placeholder="Confirm password" id="confirm_pw" name="confirm_pw">
+                    </div>
+                    <div class="col-1">
+                        <i class="fa-regular fa-eye-slash" id="togglePasswordconfirm" style="color: white;"></i>
                     </div>
                 </div>
                 <br>
@@ -142,5 +148,28 @@
         </form>
     </div>
 </body>
+<script>
+    const togglePassword = document.querySelector("#togglePassword");
+    const input_pw = document.querySelector("#input_pw");
+    togglePassword.addEventListener("click", function() {
+        // toggle the type attribute
+        const type = input_pw.getAttribute("type") === "password" ? "text" : "password";
+        input_pw.setAttribute("type", type);
+
+        // toggle the icon
+        this.classList.toggle("fa-eye");
+    });
+
+    const togglePasswordconfirm = document.querySelector("#togglePasswordconfirm");
+    const confirm_pw = document.querySelector("#confirm_pw");
+    togglePasswordconfirm.addEventListener("click", function() {
+        // toggle the type attribute
+        const type = confirm_pw.getAttribute("type") === "password" ? "text" : "password";
+        confirm_pw.setAttribute("type", type);
+
+        // toggle the icon
+        this.classList.toggle("fa-eye");
+    });
+</script>
 
 </html>

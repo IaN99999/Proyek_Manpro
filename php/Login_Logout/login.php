@@ -8,8 +8,7 @@ if (isset($_SESSION['username'])) {
         # code...
         header("Location: ../User_Page/home.php");
         exit();
-    }
-    else if ($_SESSION['nama_jenis_user'] == "Guru") {
+    } else if ($_SESSION['nama_jenis_user'] == "Guru") {
         header("Location: ../Guru_Page/daftarSiswa.php");
         exit();
     }
@@ -31,8 +30,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['id'] = $row['Id_User'];
             header("Location: ../User_Page/home.php");
             exit();
-        }
-        else if ($row['Nama_Jenis'] == "Guru") {
+        } else if ($row['Nama_Jenis'] == "Guru") {
             # code...
             $_SESSION['nama_jenis_user'] = $row['Nama_Jenis'];
             $_SESSION['id'] = $row['Id_User'];
@@ -99,7 +97,11 @@ if (isset($_POST['submit'])) {
                                 <div class="input-group-prepend">
                                     <i class="input-group-text fa-solid fa-lock" style="color: #053fa3;padding-top: 29%;padding-bottom: 22%;"></i>
                                 </div>
-                                <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" name="password" require>
+                                <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" name="password" id="password" require>
+                                <div style="margin-left: 3%;align-self: center;margin-right: -7%;">
+                                    <i class="fa-regular fa-eye-slash" id="togglePassword"></i>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -110,7 +112,18 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </div>
+    <script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+        togglePassword.addEventListener("click", function() {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
 
+            // toggle the icon
+            this.classList.toggle("fa-eye");
+        });
+    </script>
 </body>
 
 </html>

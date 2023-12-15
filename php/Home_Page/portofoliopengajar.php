@@ -1,8 +1,12 @@
 <?php include '../navbar_footer/navbar.php'; ?>
-
+<style>
+		body {
+			background: url('../../assets/asset_web/bg.png');
+		}
+</style>
 <div class="container mt-3" style="padding-top: 5%;">
     <div class="row" style="padding-top:2%">
-        <h2>Portofolio Pengajar</h2>
+        <h2 style="color: white;">Portofolio Pengajar</h2>
         <div class="col-12" style="padding-top:3%">
 
 

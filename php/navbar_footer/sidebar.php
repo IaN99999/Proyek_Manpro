@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,14 +82,15 @@
             bottom: 20px;
             width: 100%;
         } -->
-<!-- </style> -->
+    <!-- </style> -->
 </head>
+
 <body>
-<div class="sidebar">
+    <div class="sidebar">
         <div class="logo">Dana English Course</div>
         <ul class="menu">
             <li>
-                <a href="home.php"><i class="fa fa-tachometer-alt"></i><span> Dashboard</span></a>
+                <!-- <a href="home.php"><i class="fa fa-tachometer-alt"></i><span> Dashboard</span></a> -->
             </li>
             <li>
                 <a href="joinedClass.php"><i class="fa fa-graduation-cap"></i><span> Class</span></a>

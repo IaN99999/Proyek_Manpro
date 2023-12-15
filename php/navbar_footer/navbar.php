@@ -39,7 +39,7 @@
                         <a href="../Home_Page/portofoliopengajar.php">Teacher</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../Home_Page/aboutUs.php">About Us</a>
+                        <a href="../Home_Page/aboutUs.php"  style="pointer-events: none;text-decoration: none;"><span  style="color: gray; cursor: not-allowed;">About Us</span></a>
                     </li>
 
                 </ul>

@@ -48,6 +48,7 @@ $resultselectguru = mysqli_query($conn, $queryselectguru);
                 <th scope="col">Nama Class</th>
                 <th scope="col">Harga</th>
                 <th scope="col">Periode</th>
+                <th scope="col">action</th>
             </tr>
         </thead>
         <tbody>
@@ -93,6 +94,11 @@ $resultselectguru = mysqli_query($conn, $queryselectguru);
                     <td>
                         <?= $row['Periode'] ?>
                     </td>
+                    <td>
+                        <button type="button" class="btn btn-warning" onclick="editFunction(<?= $idclass ?>)" data-bs-toggle="modal" data-bs-target="#myModal">Edit</button>
+                        <button type="button" class="btn btn-danger" onclick="deleteFunction(<?= $idclass ?>)">Hapus</button>
+                    </td>
+
                 </tr>
             <?php endforeach; ?>
 
@@ -175,7 +181,9 @@ $resultselectguru = mysqli_query($conn, $queryselectguru);
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" onclick="addData()">ADD</button>
+                <input type="hidden" name="idclassedit" id="idclassedit">
+                <button type="button" class="btn btn-success" onclick="updatedata()" hidden id="updatebtn">update</button>
+                <button type="button" class="btn btn-success" onclick="addData()" id="addbtnmodal">ADD</button>
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
             </div>
 
@@ -184,8 +192,20 @@ $resultselectguru = mysqli_query($conn, $queryselectguru);
 </div>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
+    let addbtnmodal = document.getElementById('addbtnmodal');
+    let updatebtn = document.getElementById('updatebtn');
+    let idclassedit = document.getElementById('idclassedit');
+    let addbtn = document.getElementById('addbtn');
+    addbtn.addEventListener('click', function(){
+        addbtnmodal.hidden = false;
+        updatebtn.hidden = true;
+    });
+
     function addData() {
         // Get the values from the form fields
+
+   
+
         var namaclass = $("#namaclass").val();
         var selectguru = $("#selectguru").val();
         var hargaclass = $("#hargaclass").val();
@@ -206,6 +226,119 @@ $resultselectguru = mysqli_query($conn, $queryselectguru);
             success: function(response) {
                 // Handle the response from the server (e.g., show a success message)
                 alert("Data added successfully!");
+                window.location.reload();
+
+            },
+            error: function(error) {
+                // Handle the error (e.g., show an error message)
+                alert("Error adding data. Please try again.");
+                window.location.reload();
+            }
+        });
+    }
+
+    function deleteFunction(classId) {
+        // Ask for confirmation before deleting
+        if (confirm("Are you sure you want to delete this class?")) {
+            // Assuming you have a PHP file (delete_data.php) to handle data deletion
+            $.ajax({
+                type: 'POST',
+                url: 'SQL/DELETECLASS.php',
+                data: {
+                    classId: classId
+                },
+                success: function(response) {
+                    // Handle the response after deleting data
+                    console.log(response);
+                    location.reload();
+                    // Optionally, you can update the UI or reload the page
+                    // For example, you can remove the deleted row from the table
+                    // $('#row_' + userId).remove();
+                }
+            });
+        }
+    }
+
+    function editFunction(classId) {
+        console.log('Edit button clicked for user with ID: ' + classId);
+        idclassedit.value = classId;
+        addbtnmodal.hidden = true;
+        updatebtn.hidden = false;
+        // let Formsubmit = document.getElementById('Formsubmit');
+        // Formsubmit.action = "";
+        $.ajax({
+            type: 'POST',
+            url: 'SQL/GetDataClassEdit.php',
+            data: {
+                classId: classId
+            },
+            success: function(data) {
+                // Assuming the returned data is in JSON format
+                var userData = JSON.parse(data);
+
+                // Populate the modal fields
+                $('#namaclass').val(userData.Nama_Class);
+                $('#selectguru').val(userData.Id_Guru);
+                $('#hargaclass').val(userData.Price);
+
+                if (userData.Periode === 'Genap') {
+                    $('#genap').prop('checked', true);
+                } else if (userData.Periode === 'Ganjil') {
+                    $('#ganjil').prop('checked', true);
+                }
+            }
+        });
+
+        // $('#Formsubmit').on('submit', function(event) {
+        //     // event.preventDefault();
+        //     let Username = document.getElementById("Username");
+        //     let Password = document.getElementById("Password");
+        //     let Email = document.getElementById("Email");
+
+        //     // Assuming you have a PHP file (update_data.php) to handle data update
+        //     $.ajax({
+        //         type: 'POST',
+        //         url: 'SQL/UpdateDataTeacher.php',
+        //         data: {
+        //             user_id: userId,
+        //             nama: Username.value,
+        //             passwordbaru: Password.value,
+        //             emailbaru: Email.value,
+        //         },
+        //         success: function(response) {
+        //             // Handle the response after updating data
+        //             console.log(response);
+
+        //             // Close the modal
+        //             $('#myModal').modal('hide');
+        //         }
+        //     });
+        // });
+    }
+
+    function updatedata() {
+
+        var namaclass = $("#namaclass").val();
+        var selectguru = $("#selectguru").val();
+        var hargaclass = $("#hargaclass").val();
+        var idclasseditupdate = $('#idclassedit').val();
+        var periodeclass = $("input[name='periodeclass']:checked").val();
+        var idtype = $("#idtype").val();
+        // Make an AJAX request to insert data into the tables
+        $.ajax({
+            type: "POST",
+            url: "SQL/Updateclass.php", // Replace with the actual server-side script
+            data: {
+                namaclass: namaclass,
+                selectguru: selectguru,
+                hargaclass: hargaclass,
+                periodeclass: periodeclass,
+                // idtype: idtype,
+                idclass: idclasseditupdate
+            },
+            success: function(response) {
+                // Handle the response from the server (e.g., show a success message)
+                alert("Data update successfully!");
                 window.location.reload();
 
             },

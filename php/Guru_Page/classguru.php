@@ -2,10 +2,10 @@
 include '../connection.php';
 // include "../navbar_footer/sidebar.php";
 session_start();
-$idclass = isset($_GET['id']) ? $_GET['id'] : 'Tidak Ada id';
+
 $username = $_SESSION['username'];
 // Mengambil data dari tabel
-$iduser =  $_SESSION['id'];
+$iduser = $_SESSION['id'];
 
 // $sql2 = "SELECT * FROM class WHERE  Id_Guru = $iduser";
 // $result2 = $conn->query($sql);
@@ -13,12 +13,10 @@ $iduser =  $_SESSION['id'];
 // $iduser = $row2['Id_Class'];
 
 
-// echo $iduser, $idclass;
+// echo $iduser
 $sql = "SELECT *
-FROM user
-JOIN class ON user.id_class = class.Id_Class
-JOIN jadwal ON class.Id_Class = jadwal.Id_Class
-WHERE user.Id_User = $iduser AND class.Id_Class = $idclass";
+FROM class join class_type ON class.Id_Type = class_type.Id_Type
+WHERE class.Id_Guru = $iduser;";
 $result = $conn->query($sql);
 
 // Memeriksa hasil query
@@ -280,23 +278,22 @@ li a:hover:not(.active) {
 
   <div style="margin-left:20%;padding:0px 16px;">
     <div class="user">
-      <h4 class="welcome">WELCOME <?= $username ?></h4>
+      <h4 class="welcome">WELCOME USER</h4>
     </div>
 
     <div class="container">
       <div class="row">
-        <button type="button" class="btn btn-success" onclick="ADDFucntion(<?= $idclass ?>)">ADD Pertemuan</button>
+        <!-- <button type="button" class="btn btn-success" onclick="ADDFucntion()">ADD Pertemuan</button> -->
         <div class="container" style="background-color:grey;height:max-content">
           <?php foreach ($data as $loopIndex => $row) : ?>
             <div class="card" style="margin: 2%">
               <div class="title">
-                <h3 style="color: black; padding-top:4%"><b>PERTEMUAN <?= $loopIndex + 1 ?></b></h3>
+                <h3 style="color: black; padding-top:4%"><b>Class <?= $row['Nama_Class'] ?></b></h3>
 
-                <p style="color:black">DATE/TIME : <?= $row['Tanggal_Jadwal'] ?>/10.30-13.30</p>
-                <p style="color:black">LECTURER : <?= $row['Nama_User'] ?></p>
-                <p style="color:black">LESSON : Introduction</p>
+                <p style="color:black">Periode : <?= $row['Periode'] ?></p>
+                <p style="color:black">tingkat :  <?= $row['Nama_Jenis'] ?></p>
 
-                <a class="btn btn-success" style="margin-right:32px; margin-bottom:7px" href="absensicheckguru.php?idjadwal=<?= $row['Id_Jadwal'] ?>&pertemuan=<?=  $loopIndex + 1  ?>" role="button">Check</a>
+                <a class="btn btn-success" style="margin-right:32px; margin-bottom:7px" href="absensiguru.php?id=<?= $row['Id_Class'] ?>" role="button">Check</a>
               </div>
             </div>
           <?php endforeach; ?>
@@ -305,29 +302,6 @@ li a:hover:not(.active) {
       </div>
     </div>
   </div>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script>
-    function ADDFucntion(idclass) {
-      $.ajax({
-        type: "POST",
-        url: "SQL/InsertDataJadwal.php", // Replace with the actual server-side script
-        data: {
-          idclass: idclass,
-        },
-        success: function(response) {
-          // Handle the response from the server (e.g., show a success message)
-          alert("Data added successfully!");
-          // window.location.reload();
-
-        },
-        error: function(error) {
-          // Handle the error (e.g., show an error message)
-          alert("Error adding data. Please try again.");
-          window.location.reload();
-        }
-      });
-    }
-  </script>
 
 </body>
 

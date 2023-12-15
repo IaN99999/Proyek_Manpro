@@ -30,7 +30,7 @@ session_start();
                 <a href="reportSiswa.php"><i class="fa fa-book"></i><span> Report</span></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-archive"></i><span> Buy Package</span></a>
+                <a href="absen.php"><i class="fa fa-archive"></i><span> Absen</span></a>
             </li>
             <li>
                 <a href="userHoliday.php"><i class="fa fa-calendar"></i><span> Schedule</span></a>

@@ -109,6 +109,9 @@ $conn->close();
                             <div class="col-6">
                                 <input type="password" class="form-control" placeholder="Password" name="Password" id="Password">
                             </div>
+                            <div class="col-1">
+                                <i class="fa-regular fa-eye-slash" id="togglePassword"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -128,6 +131,18 @@ $conn->close();
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
+    const togglePassword = document.querySelector("#togglePassword");
+    const password = document.querySelector("#Password");
+    togglePassword.addEventListener("click", function() {
+        // toggle the type attribute
+        const type = password.getAttribute("type") === "password" ? "text" : "password";
+        password.setAttribute("type", type);
+
+        // toggle the icon
+        this.classList.toggle("fa-eye");
+    });
+
+
     function editFunction(userId) {
         console.log('Edit button clicked for user with ID: ' + userId);
         let Formsubmit = document.getElementById('Formsubmit');
@@ -175,6 +190,7 @@ $conn->close();
             });
         });
     }
+
     function deleteFunction(userId) {
         // Ask for confirmation before deleting
         if (confirm("Are you sure you want to delete this user?")) {
@@ -182,7 +198,9 @@ $conn->close();
             $.ajax({
                 type: 'POST',
                 url: 'SQL/DeleteTeacher.php',
-                data: { user_id: userId },
+                data: {
+                    user_id: userId
+                },
                 success: function(response) {
                     // Handle the response after deleting data
                     console.log(response);

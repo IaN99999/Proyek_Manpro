@@ -126,6 +126,8 @@ session_start();
                 <li><a href="indexAdmin.php">Home</a></li>
                 <li><a href="class.php">Class</a></li>
                 <li><a href="teacherAdmin.php">Teacher</a></li>
+                <li><a href="adminHoliday.php">Holiday</a></li>
+                <li><a href="appvpayment.php">approve payment</a></li>
                 <li><a href="#contact" style="pointer-events: none;"><span style="color: gray; cursor: not-allowed;">Coming Soon</span></a></li>
             </ul>
         </nav>
